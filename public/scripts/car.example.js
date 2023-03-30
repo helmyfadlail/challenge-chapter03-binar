@@ -40,13 +40,39 @@ class Car {
   }
 
   render() {
-    return `
-      <p>id: <b>${this.id}</b></p>
-      <p>plate: <b>${this.plate}</b></p>
-      <p>manufacture: <b>${this.manufacture}</b></p>
-      <p>model: <b>${this.model}</b></p>
-      <p>available at: <b>${this.availableAt}</b></p>
-      <img src="${this.image}" alt="${this.manufacture}" width="64px">
+    const price = Intl.NumberFormat("id-ID", {
+      currency: "IDR",
+      style: "currency",
+    }).format(this.rentPerDay);
+    return ` 
+      <div class="card-content">
+        <img src="${this.image}" alt="${this.manufacture}" />
+
+        <div class="card-description">
+          <span class="name">${this.manufacture} ${this.model} / ${this.type}</span>
+          <span class="profession">${price} / hari</span>
+          <p class="description">${this.description}</p>
+        </div>
+
+        <div class="card-detail">
+          <div>
+            <ion-icon name="person-outline"></ion-icon>
+            <span>${this.capacity}</span>
+          </div>
+          <div>
+            <ion-icon name="settings-outline"></ion-icon>
+            <span>${this.transmission}</span>
+          </div>
+          <div>
+            <ion-icon name="calendar-clear-outline"></ion-icon>
+            <span>${this.year}</span>
+          </div>
+        </div>
+
+        <div class="button">
+          <button class="aboutMe">Pilih Mobil</button>
+        </div>
+      </div>
     `;
   }
 }

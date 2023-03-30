@@ -1,0 +1,227 @@
+body,
+html {
+  overflow-x: hidden;
+  font-family: "Helvetica", "Arial", sans-serif !important;
+}
+
+p {
+  font-size: 16px;
+  color: #000;
+}
+.title {
+  font-size: 32px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+/* testimonial */
+.photo {
+  margin-bottom: 16px;
+  width: 150px;
+  height: 150px;
+}
+.img-carousel {
+  height: 300px;
+  width: 100%;
+}
+
+/* FAQ */
+#accordion-item {
+  border: 1px solid #d4d4d4;
+  margin-top: 12px;
+}
+
+/* footer */
+.flex-row > li {
+  background-color: #0d28a6;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-row > li > ion-icon {
+  font-size: 24px;
+  color: #fff;
+}
+
+/* button greeen */
+.btn-green {
+  width: max-content;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  background-color: #5cb85f;
+  text-decoration: none;
+  transition: ease-in-out 0.3s;
+}
+.btn-green:hover {
+  color: #fff;
+  background-color: #458e47;
+}
+
+/* search car */
+.form-container {
+  bottom: 50px;
+  z-index: 100;
+  font-size: 10px !important;
+}
+
+.form-container .card {
+  padding: 20px;
+  box-shadow: 0px 10px 10px 10px #00000026;
+}
+
+.btn-group {
+  display: flex;
+  padding-top: 35px;
+  height: max-content;
+  gap: 10px;
+}
+
+.form-container .card {
+  padding: 20px;
+  background: #fff;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 0px 10px 0px #00000026;
+}
+
+.form-label {
+  font-size: 14px;
+  width: max-content;
+}
+
+.form-item::placeholder {
+  font-size: 14px;
+}
+
+/* card for car */
+.list-card {
+  background: #fff;
+  border-radius: 20px;
+  margin: 2rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.list-card .card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding: 15px;
+  z-index: 100;
+}
+
+.list-card .card-content img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border: 3px solid #fff;
+}
+
+.list-card .card-content .card-description {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 170px;
+  word-break: break-word;
+  color: #222;
+  gap: 5px;
+}
+
+.card-description .name {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.card-description .profession {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.card-description .description {
+  font-size: 14px;
+}
+
+.list-card .card-content .card-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.card-detail > div {
+  display: flex;
+  gap: 10px;
+}
+
+.card-detail > div span {
+  font-size: 18px;
+}
+
+.card-detail > div ion-icon {
+  font-size: 24px;
+}
+
+.list-card .button {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.list-card .button button {
+  background: #5cb85f;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  padding: 8px 22px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.button button:hover {
+  background: #458e47;
+}
+
+@media only screen and (max-width: 992px) {
+  p {
+    font-size: 14px;
+  }
+  .title {
+    font-size: 26px;
+    letter-spacing: 0;
+  }
+
+  /* search-car */
+  .btn-group {
+    padding-top: 24px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  /* header */
+  .img-car {
+    margin: 0 20px;
+  }
+
+  /* testimonial */
+  .photo {
+    width: 100px;
+    height: 100px;
+  }
+  .img-carousel {
+    height: 450px;
+  }
+
+  /* search car */
+  .form-container {
+    bottom: 0;
+    margin-top: 2rem;
+  }
+}

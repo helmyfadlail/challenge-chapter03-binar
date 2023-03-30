@@ -3,26 +3,36 @@ class App {
     this.clearButton = document.getElementById("clear-btn");
     this.loadButton = document.getElementById("load-btn");
     this.carContainerElement = document.getElementById("cars-container");
-  }
-
-  async init() {
-    await this.load();
-
-    // Register click listener
-    this.clearButton.onclick = this.clear;
-    this.loadButton.onclick = this.run;
+    this.tipeDriver = document.getElementById("tipe-driver");
+    this.date = document.getElementById("tanggal");
+    this.pickUpTime = document.getElementById("waktu-jemput");
+    this.customer = document.getElementById("jumlah-penumpang");
   }
 
   run = () => {
     Car.list.forEach((car) => {
       const node = document.createElement("div");
+      node.classList.add("list-card");
       node.innerHTML = car.render();
       this.carContainerElement.appendChild(node);
     });
   };
 
-  async load() {
-    const cars = await Binar.listCars();
+  async load(customer) {
+    const date = app.date.value;
+    const pickUp = app.pickUpTime.value;
+    const input = new Date(`${date} ${pickUp}`);
+    const miliTimeInput = input.getTime();
+
+    const cars = await Binar.listCars((item) => {
+      const dateTime = new Date(item.availableAt);
+      const miliDataTime = Number(dateTime.getTime());
+      const dateFilter = miliDataTime < miliTimeInput;
+      if (item.capacity == customer) {
+        return dateFilter;
+      }
+    });
+
     Car.init(cars);
   }
 
