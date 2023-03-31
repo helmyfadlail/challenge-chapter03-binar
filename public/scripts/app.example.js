@@ -28,9 +28,9 @@ class App {
       const dateTime = new Date(item.availableAt);
       const miliDataTime = Number(dateTime.getTime());
       const dateFilter = miliDataTime < miliTimeInput;
-      if (item.capacity == customer) {
-        return dateFilter;
-      }
+      const customerFilter = item.capacity <= customer;
+
+      return dateFilter || customerFilter;
     });
 
     Car.init(cars);

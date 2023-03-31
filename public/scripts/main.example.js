@@ -17,7 +17,7 @@ app.loadButton.addEventListener("click", () => {
   const tipeDriver = app.tipeDriver.value;
   const customer = app.customer.value;
 
-  if (tipeDriver && customer > 0) {
+  if (tipeDriver) {
     app.load(customer).then(app.run);
     app.clear();
   }
